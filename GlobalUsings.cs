@@ -1,0 +1,12 @@
+﻿global using Newtonsoft.Json.Linq;
+global using Newtonsoft.Json.Schema;
+global using Newtonsoft.Json.Schema.Generation;
+global using BakeryAwesome.Helpers;
+global using BakeryAwesome.Model;
+global using BakeryAwesome.Resources;
+global using BakeryAwesome.Utilities;
+global using FluentAssertions;
+global using Newtonsoft.Json;
+global using RestSharp;
+global using TechTalk.SpecFlow;
+global using System.Configuration;
