@@ -6,14 +6,12 @@ public class BakeryAwesomeSteps
 {    
     private readonly ScenarioContext _scenarioContext;
     private readonly ApiClient _apiClient;
-    private readonly RequestConfiguration _requestConfiguration;
     private readonly ResponseConfiguration _responseConfiguration;
     private readonly BakeryAwesomeResource _bakeryAwesomeResource;
 
     public BakeryAwesomeSteps(ScenarioContext scenarioContext)
     {
         _apiClient = new ApiClient();
-        _requestConfiguration = new RequestConfiguration();
         _responseConfiguration = new ResponseConfiguration();
         _bakeryAwesomeResource = new BakeryAwesomeResource();
         _scenarioContext = scenarioContext;
@@ -25,7 +23,7 @@ public class BakeryAwesomeSteps
     public void WhenICallBakeryAwesomeEndpoint()
     {        
         var client = _apiClient.GetClient();
-        var request = _requestConfiguration.CreateRequest(_bakeryAwesomeResource.Endpoint, Method.Get);
+        var request = new RestRequest(_bakeryAwesomeResource.Endpoint, Method.Get);
         _scenarioContext.Set<RestResponse>(client.Execute(request));     
     }
 
@@ -57,7 +55,7 @@ public class BakeryAwesomeSteps
     public void WhenICallBakeryAwesomeEndpointWithPathparam()
     {
         var client = _apiClient.GetClient();
-        var request = _requestConfiguration.CreateRequest($"{_bakeryAwesomeResource.Endpoint}/{_bakeryAwesomeResource.PathParamOne}", Method.Get);
+        var request = new RestRequest($"{_bakeryAwesomeResource.Endpoint}/{_bakeryAwesomeResource.PathParamOne}", Method.Get);
         _scenarioContext.Set<RestResponse>(client.Execute(request));
     }       
 
@@ -87,7 +85,7 @@ public class BakeryAwesomeSteps
     public void WhenISendRequestToBakeryAwesomeEndpointWith(string endpoint)
     {
         var client = _apiClient.GetClient();
-        var request = _requestConfiguration.CreateRequest(DataHelper.GetBakeryAwesomeTestData(endpoint), Method.Get);
+        var request = new RestRequest(DataHelper.GetBakeryAwesomeTestData(endpoint), Method.Get);
         _scenarioContext.Set<RestResponse>(client.Execute(request));
     }
 
@@ -110,8 +108,8 @@ public class BakeryAwesomeSteps
     [When(@"I make call to BakeryAwesome endpoint with (.*)")]
     public void WhenIMakeCallToBakeryAwesomeEndpointWith(string pathParam)
     {
-        var client = _apiClient.GetClient();
-        var request = _requestConfiguration.CreateRequest($"{_bakeryAwesomeResource.Endpoint}/{DataHelper.GetBakeryAwesomeTestData(pathParam)}", Method.Get);
+        var client = _apiClient.GetClient();        
+        var request = new RestRequest($"{_bakeryAwesomeResource.Endpoint}/{DataHelper.GetBakeryAwesomeTestData(pathParam)}", Method.Get);
         _scenarioContext.Set<RestResponse>(client.Execute(request));
     }
 

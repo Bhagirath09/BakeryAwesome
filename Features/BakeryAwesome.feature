@@ -3,7 +3,7 @@
 As a user I should be able to get Cake order details 
 
 @Bakeryawesome
-Scenario: Valid - Get Cake order details - BakeryAwesome
+Scenario: Valid - Get all Cake orders - BakeryAwesome
 	When I call BakeryAwesome endpoint 
 	Then I should see cake order details in response
 

@@ -70,14 +70,14 @@ namespace BakeryAwesome.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Valid - Get Cake order details - BakeryAwesome", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Valid - Get all Cake orders - BakeryAwesome", new string[] {
                 "Bakeryawesome"}, SourceLine=5)]
-        public virtual void Valid_GetCakeOrderDetails_BakeryAwesome()
+        public virtual void Valid_GetAllCakeOrders_BakeryAwesome()
         {
             string[] tagsOfScenario = new string[] {
                     "Bakeryawesome"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid - Get Cake order details - BakeryAwesome", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid - Get all Cake orders - BakeryAwesome", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
